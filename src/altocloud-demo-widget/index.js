@@ -6,21 +6,24 @@ import autobind from 'autobind-decorator';
 
 import SparkLogo from '@ciscospark/react-component-spark-logo';
 import SparkOAuth from '@ciscospark/react-component-spark-oauth';
-import WidgetMessageMeet from '@altocloud/widget';
+import WidgetVideo from '@altocloud/widget-customer-video';
+import ExampleCode, {MODE_REACT, MODE_INLINE} from '../example-code';
 
 import styles from './styles.css';
 
 
-class DemoWidgetMessageMeet extends Component {
+class DemoWidgetVideo extends Component {
   constructor(props) {
     super(props);
     const l = window.location;
     const redirectUri = `${l.protocol}//${l.host}${l.pathname}`.replace(/\/$/, ``);
-    const clientId = process.env.MESSAGE_DEMO_CLIENT_ID;
-    const clientSecret = process.env.MESSAGE_DEMO_CLIENT_SECRET;
+    const clientId = `C96c667a841f0d88bf0077433e5e1a025d7ca336dd818de78b030ed2785329b7e`;
+    const clientSecret = `8612b07f17dc3b61df6f7b97ab840fcb2262b34b5ad1e9228bc1ed336dccfa32`;
     this.state = {
       authenticate: false,
-      accessToken: cookie.load(`accessToken`) || ``,
+      mode: MODE_INLINE,
+      accessToken: `OTRjM2U5M2EtMTJlNy00ZWJjLThlYmItOTNmYmNlZGRhNGQ5ZDYwNjFmYmItNmVi`,
+      toPersonEmail: `hwang@altocloud.com`,
       running: false,
       clientId,
       clientSecret,
@@ -36,10 +39,24 @@ class DemoWidgetMessageMeet extends Component {
   @autobind
   handleSubmit(e) {
     e.preventDefault();
-    // get Free User Information
-    // cookie.save(`accessToken`, this.state.accessToken);
-    // cookie.save(`toPersonEmail`, this.state.toPersonEmail);
+    cookie.save(`accessToken`, this.state.accessToken);
+    cookie.save(`toPersonEmail`, this.state.toPersonEmail);
     this.setState({running: true});
+  }
+
+  @autobind
+  handleAccessTokenChange(e) {
+    return this.setState({accessToken: e.target.value});
+  }
+
+  @autobind
+  handleEmailChange(e) {
+    return this.setState({toPersonEmail: e.target.value});
+  }
+
+  @autobind
+  handleModeChange(e) {
+    return this.setState({mode: e.target.value});
   }
 
   @autobind
@@ -59,43 +76,14 @@ class DemoWidgetMessageMeet extends Component {
   }
 
   render() {
-    const loadButtonEnabled = this.state.accessToken && this.state.toPersonEmail;
-    if (this.state.running) {
-      return (
-        <div className={classNames(`widget-component-container`, styles.widgetComponentContainer)}>
-          <WidgetMessageMeet accessToken={this.state.accessToken} toPersonEmail={this.state.toPersonEmail} />
-        </div>);
-    }
     return (
-      <div className={classNames(`demo-wrapper`, styles.demoWrapper)}>
-        <div className={classNames(`logo`, styles.logo)}>
-          <SparkLogo />
-        </div>
-        <form className={classNames(`demo-form`, styles.demoForm)}>
-          {`Altocloud Cisco Spark Guest Demo Example`}
-          <button
-            className={classNames(`button`, styles.button)}
-            disabled={!loadButtonEnabled}
-            onClick={this.handleSubmit}
-          >
-            {`Login as Guest`}
-          </button>
-          <SparkOAuth
-            clientId={this.state.clientId}
-            clientSecret={this.state.clientSecret}
-            doAuth={this.state.authenticate}
-            onAuth={this.handleOnAuth}
-            redirectUri={this.state.redirectUri}
-            scope={this.state.scope}
-          />
-        </form>
-      </div>
-    );
+      <div className={classNames(`widget-component-container`, styles.widgetComponentContainer)}>
+        <WidgetVideo accessToken={this.state.accessToken} toPersonEmail={this.state.toPersonEmail} />
+      </div>);
   }
 }
 
-DemoWidgetMessageMeet.title = `Widget Message Meet`;
-DemoWidgetMessageMeet.path = `/wmm-demo`;
+DemoWidgetVideo.title = `Widget Message Meet`;
+DemoWidgetVideo.path = `/wmm-demo`;
 
-export default DemoWidgetMessageMeet;
-
+export default DemoWidgetVideo;
