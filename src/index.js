@@ -28,4 +28,6 @@ export {default as TypingAvatar} from '@ciscospark/react-component-typing-avatar
 export {default as TypingIndicator} from '@ciscospark/react-component-typing-indicator';
 export {default as WidgetMessageMeet} from '@ciscospark/widget-message-meet';
 
-import './basic-demo';
+export {default as AltocloudCustomerVideo} from '@altocloud/widget-customer-video';
+
+import './altocloud-demo';
