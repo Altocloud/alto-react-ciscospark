@@ -26,8 +26,6 @@ export {default as TextArea} from '@ciscospark/react-component-textarea';
 export {default as TitleBar} from '@ciscospark/react-component-title-bar';
 export {default as TypingAvatar} from '@ciscospark/react-component-typing-avatar';
 export {default as TypingIndicator} from '@ciscospark/react-component-typing-indicator';
-export {default as WidgetMessageMeet} from '@ciscospark/widget-message-meet';
 
-export {default as AltocloudCustomerVideo} from '@altocloud/widget-customer-video';
-
-import './altocloud-demo';
+export {default as WidgetCustomerVideo} from '@altocloud/widget-customer-video';
+export {default as AltoSparkVideo} from '@altocloud/alto-spark-video';

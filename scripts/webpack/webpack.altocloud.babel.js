@@ -13,8 +13,8 @@ const plugins = [
   }),
   new webpack.EnvironmentPlugin([
     `CISCOSPARK_ACCESS_TOKEN`,
-    `MESSAGE_DEMO_CLIENT_ID`,
-    `MESSAGE_DEMO_CLIENT_SECRET`
+    `CISCOSPARK_CLIENT_ID`,
+    `CISCOSPARK_CLIENT_SECRET`
   ])
 ];
 
