@@ -24,7 +24,9 @@ export default (options) => {
     output: Object.assign({
       filename: `bundle.js`,
       path: path.resolve(__dirname, `..`, `..`, `dist`),
-      sourceMapFilename: `[file].map`
+      sourceMapFilename: `[file].map`,
+      library: `AltoSparkVideo`,
+      libraryTarget: `umd`
     }, options.output),
     devtool: options.devtool,
     devServer: options.devServer,
