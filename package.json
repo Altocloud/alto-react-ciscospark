@@ -36,8 +36,7 @@
     "url": "https://github.com/ciscospark/react-ciscospark/issues"
   },
   "files": [
-    "dist/bundle.js",
-    "dist/main.css"
+    "dist"
   ],
   "homepage": "https://github.com/ciscospark/react-ciscospark#readme",
   "main": "dist/bundle.js",
