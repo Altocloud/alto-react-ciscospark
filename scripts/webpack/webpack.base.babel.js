@@ -25,7 +25,7 @@ export default (options) => {
       filename: `bundle.js`,
       path: path.resolve(__dirname, `..`, `..`, `dist`),
       sourceMapFilename: `[file].map`,
-      library: `AltoSparkVideo`,
+      library: `alto-react-ciscospark`,
       libraryTarget: `umd`
     }, options.output),
     devtool: options.devtool,
