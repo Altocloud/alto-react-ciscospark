@@ -11,8 +11,9 @@ const stat = denodeify(fs.stat);
  * @param  {string} pkgPath
  * @returns {undefined}
  */
-export default function buildPackage(pkgName, pkgPath) {
-  pkgPath = pkgPath || path.resolve(__dirname, `..`, `packages`, `node_modules`, `@ciscospark`, pkgName);
+export default function buildPackage(pkgName, pkgPath, customScope) {
+  const scope = customScope || `@ciscospark`;
+  pkgPath = pkgPath || path.resolve(__dirname, `..`, `packages`, `node_modules`, scope, pkgName);
   return Promise.all([stat(pkgPath), stat(path.resolve(pkgPath, `package.json`))])
     .then((statObj) => {
       // If the folder doesn't exist do nothing

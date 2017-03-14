@@ -14,16 +14,14 @@ const plugins = [
   new webpack.EnvironmentPlugin([
     `CISCOSPARK_ACCESS_TOKEN`,
     `CISCOSPARK_CLIENT_ID`,
-    `CISCOSPARK_CLIENT_SECRET`,
-    `TO_PERSON_EMAIL`,
-    `TO_PERSON_ID`
+    `CISCOSPARK_CLIENT_SECRET`
   ])
 ];
 
 export default webpackConfigBase({
-  entry: `./index.js`,
+  entry: `./altocloud-demo.js`,
   plugins,
-  devtool: `source-map`,
+  devtool: `cheap-module-eval-source-map`,
   devServer: {
     port: 8000,
     stats: {

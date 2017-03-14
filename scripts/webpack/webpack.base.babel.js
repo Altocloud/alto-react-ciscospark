@@ -10,8 +10,8 @@ export default (options) => {
   const plugins = [
     new webpack.EnvironmentPlugin([
       `NODE_ENV`,
-      `MESSAGE_DEMO_CLIENT_ID`,
-      `MESSAGE_DEMO_CLIENT_SECRET`
+      `CISCOSPARK_CLIENT_ID`,
+      `CISCOSPARK_CLIENT_SECRET`
     ]),
     new ExtractTextPlugin({filename: `[name].css`, disable: false, allChunks: true}),
     // Adds use strict to prevent catch global namespace issues outside of chunks.
@@ -24,7 +24,9 @@ export default (options) => {
     output: Object.assign({
       filename: `bundle.js`,
       path: path.resolve(__dirname, `..`, `..`, `dist`),
-      sourceMapFilename: `[file].map`
+      sourceMapFilename: `[file].map`,
+      library: `alto-react-ciscospark`,
+      libraryTarget: `umd`
     }, options.output),
     devtool: options.devtool,
     devServer: options.devServer,

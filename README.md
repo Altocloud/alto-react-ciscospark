@@ -12,6 +12,14 @@ After this, you can update as per usual. ONLY PULL *MASTER* FROM UPSTEAM.
 git pull upstream master
 ```
 
+## Installing using NPM
+
+### Build From Source
+
+1.  `npm config set @ciscospark:registry https://registry.npmjs.org`
+1.  `npm login --scope=@ciscospark`
+1.  `npm install alto-react-ciscospark`
+
 # Cisco Spark for React _(react-ciscospark)_
 
 * THIS REPO CONTAINS EXPERIMENTAL CODE *
