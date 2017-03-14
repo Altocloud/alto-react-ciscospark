@@ -1,6 +1,6 @@
 {
   "name": "alto-react-ciscospark",
-  "version": "0.2.1",
+  "version": "0.2.4",
   "description": "The Cisco Spark for React library allows developers to easily incorporate Spark functionality into an application.",
   "scripts": {
     "build": "npm run build:packages && npm run build:bundle",
@@ -36,8 +36,7 @@
     "url": "https://github.com/ciscospark/react-ciscospark/issues"
   },
   "files": [
-    "dist/bundle.js",
-    "dist/main.css"
+    "dist"
   ],
   "homepage": "https://github.com/ciscospark/react-ciscospark#readme",
   "main": "dist/bundle.js",
