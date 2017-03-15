@@ -30,7 +30,7 @@ function updateInteraction(id, payload) {
 
 ReactDOM.render(
   <AltoSparkVideo
-    account={`9c42eeeb`}
+    account={{id: `9c42eeeb`}}
     closeInteraction={closeInteraction}
     interaction={interaction}
     openInteraction={openInteraction}
