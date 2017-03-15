@@ -5,20 +5,27 @@ import '@ciscospark/react-component-spark-fonts';
 
 import AltoSparkVideo from '@altocloud/alto-spark-video';
 
-const interaction = {};
+const interaction = {
+  id: `12345`
+};
 
-function openInteraction() {
-  console.log('interaction opened');
+function openInteraction(obj) {
+  console.log('interaction opened', obj);
 }
 
 
-function closeInteraction() {
-  console.log('interaction closed');
+function closeInteraction(id) {
+  console.log('interaction closed', id);
 }
 
 
-function updateInteraction() {
-  console.log('interaction updated');
+function updateInteraction(id, payload) {
+  console.log('interaction updated', id, payload);
+  return {
+    then: (next) => {
+      next();
+    }
+  };
 }
 
 ReactDOM.render(
