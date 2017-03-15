@@ -6,6 +6,8 @@ import '@ciscospark/react-component-spark-fonts';
 import AltoSparkVideo from '@altocloud/alto-spark-video';
 
 ReactDOM.render(
-  <AltoSparkVideo />,
+  <AltoSparkVideo
+    account={`9c42eeeb`}
+  />,
   document.getElementById(`main`)
 );
