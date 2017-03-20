@@ -29,8 +29,11 @@ function updateInteraction(id, payload) {
 }
 
 ReactDOM.render(
+
+  
   <AltoSparkVideo
     // toPersonEmail={`colm.seale@altocloud.com`}
+    // toPersonEmail={null}
     account={{id: `9c42eeeb`}}
     closeInteraction={closeInteraction}
     interaction={interaction}
