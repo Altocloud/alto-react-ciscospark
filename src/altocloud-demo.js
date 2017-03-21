@@ -30,14 +30,20 @@ function updateInteraction(id, payload) {
 
 ReactDOM.render(
   <AltoSparkVideo
-    // accessToken={`NWJkNzgxZTUtZDAxYy00ODYyLThkZjMtNDJjNDNkYmIzM2NjNjQ1MGY3MmYtYzhl`}
-    toPersonEmail={`colm.seale@altocloud.com`}
-    // toPersonEmail={null}
     account={{id: `9c42eeeb`}}
     closeInteraction={closeInteraction}
     interaction={interaction}
     openInteraction={openInteraction}
+    toPersonEmail={`colm.seale@altocloud.com`}
     updateInteraction={updateInteraction}
   />,
   document.getElementById(`main`)
 );
+
+/*ReactDOM.render(
+  <AltoSparkVideo
+    accessToken={`NWJkNzgxZTUtZDAxYy00ODYyLThkZjMtNDJjNDNkYmIzM2NjNjQ1MGY3MmYtYzhl`}
+    toPersonEmail={`colm.seale@altocloud.com`}
+  />,
+  document.getElementById(`main`)
+);*/
