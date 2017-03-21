@@ -32,8 +32,9 @@ ReactDOM.render(
 
   
   <AltoSparkVideo
-    toPersonEmail={`colm.seale@altocloud.com`}
-    // toPersonEmail={null}
+    // accessToken={`NWJkNzgxZTUtZDAxYy00ODYyLThkZjMtNDJjNDNkYmIzM2NjNjQ1MGY3MmYtYzhl`}
+    // toPersonEmail={`colm.seale@altocloud.com`}
+    toPersonEmail={null}
     account={{id: `9c42eeeb`}}
     closeInteraction={closeInteraction}
     interaction={interaction}
