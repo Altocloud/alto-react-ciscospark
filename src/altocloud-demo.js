@@ -6,7 +6,11 @@ import '@ciscospark/react-component-spark-fonts';
 import AltoSparkVideo from '@altocloud/alto-spark-video';
 
 const interaction = {
-  id: `12345`
+  id: `12345`,
+  provider: {
+    type: `spark`
+  },
+  state: `open`
 };
 
 function openInteraction(obj) {
@@ -28,7 +32,7 @@ function updateInteraction(id, payload) {
   };
 }
 
-/*ReactDOM.render(
+ReactDOM.render(
   <AltoSparkVideo
     account={{id: `9c42eeeb`}}
     closeInteraction={closeInteraction}
@@ -38,12 +42,12 @@ function updateInteraction(id, payload) {
     updateInteraction={updateInteraction}
   />,
   document.getElementById(`main`)
-);*/
+);
 
-ReactDOM.render(
+/*ReactDOM.render(
   <AltoSparkVideo
     accessToken={`NWJkNzgxZTUtZDAxYy00ODYyLThkZjMtNDJjNDNkYmIzM2NjNjQ1MGY3MmYtYzhl`}
     toPersonEmail={`colm.seale@altocloud.com`}
   />,
   document.getElementById(`main`)
-);
+);*/
