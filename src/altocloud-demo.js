@@ -32,7 +32,7 @@ function updateInteraction(id, payload) {
   };
 }
 
-ReactDOM.render(
+/*ReactDOM.render(
   <AltoSparkVideo
     account={{id: `9c42eeeb`}}
     closeInteraction={closeInteraction}
@@ -42,12 +42,12 @@ ReactDOM.render(
     updateInteraction={updateInteraction}
   />,
   document.getElementById(`main`)
-);
+);*/
 
-/*ReactDOM.render(
+ReactDOM.render(
   <AltoSparkVideo
-    accessToken={`MmNkOTlkMDUtNzFlMC00NzcxLWExOTAtMDQ4YjhjMWFmNWZjNTU4ZWE4YzItMTRh`}
+    accessToken={`NmFjMjhlMjUtOTNhYS00Y2E3LTg5NTItYjVjMjNiMmI0NWM3Mzc4ZjA4NjAtZTk1`}
     toPersonEmail={`colm.seale@altocloud.com`}
   />,
   document.getElementById(`main`)
-);*/
+);
