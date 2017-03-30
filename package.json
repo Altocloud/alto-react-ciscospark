@@ -19,8 +19,8 @@
     "serve": "npm run start",
     "stylelint": "stylelint \"packages/node_modules/**/*.css\"",
     "start": "NODE_ENV=development webpack-dev-server --config scripts/webpack/webpack.dev.babel.js --hot --inline --history-api-fallback",
-    "start:altocloud": "NODE_ENV=development webpack-dev-server --config scripts/webpack/webpack.altocloud.babel.js --hot --inline --history-api-fallback",
-    "start:demo": "NODE_ENV=development webpack-dev-server --config scripts/webpack/webpack.demo.babel.js --hot --inline --history-api-fallback",
+    "start:altocloud": "NODE_ENV=development webpack-dev-server --https --config scripts/webpack/webpack.altocloud.babel.js --hot --inline --history-api-fallback",
+    "start:demo": "NODE_ENV=development webpack-dev-server --https --config scripts/webpack/webpack.demo.babel.js --hot --inline --history-api-fallback",
     "start:package": "NODE_ENV=development babel-node --presets=stage-1,es2015 scripts/start-package.js"
   },
   "repository": {
