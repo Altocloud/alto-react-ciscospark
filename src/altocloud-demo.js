@@ -46,7 +46,7 @@ function updateInteraction(id, payload) {
 
 ReactDOM.render(
   <AltoSparkVideo
-    accessToken={`NmFjMjhlMjUtOTNhYS00Y2E3LTg5NTItYjVjMjNiMmI0NWM3Mzc4ZjA4NjAtZTk1`}
+    accessToken={`ODEyY2YyMmQtYzc0ZC00N2QxLWJhNjEtNDgxOGJhNzk2NzY2N2U0ZjJmOTctMDkz`}
     toPersonEmail={`colm.seale@altocloud.com`}
   />,
   document.getElementById(`main`)
