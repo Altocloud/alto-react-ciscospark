@@ -18,7 +18,7 @@ git pull upstream master
 
 1.  `npm config set @ciscospark:registry https://registry.npmjs.org`
 1.  `npm login --scope=@ciscospark`
-1.  `npm install alto-react-ciscospark`
+1.  `npm install`
 
 # Cisco Spark for React _(react-ciscospark)_
 
