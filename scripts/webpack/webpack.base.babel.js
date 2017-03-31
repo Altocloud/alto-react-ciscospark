@@ -14,6 +14,7 @@ export default (options) => {
       `NODE_ENV`,
       `CISCOSPARK_CLIENT_ID`,
       `CISCOSPARK_CLIENT_SECRET`,
+      `CISCOSPARK_SCOPE`,
       `REACT_CISCOSPARK_VERSION`
 
     ]),

@@ -12,7 +12,7 @@ const plugins = [
     template: `index.html`
   }),
   new webpack.EnvironmentPlugin([
-    `CISCOSPARK_ACCESS_TOKEN`,
+    `CISCOSPARK_SCOPE`,
     `CISCOSPARK_CLIENT_ID`,
     `CISCOSPARK_CLIENT_SECRET`
   ])

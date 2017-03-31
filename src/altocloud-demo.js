@@ -46,7 +46,7 @@ ReactDOM.render(
 
 /*ReactDOM.render(
   <AltoSparkVideo
-    accessToken={`MmNkOTlkMDUtNzFlMC00NzcxLWExOTAtMDQ4YjhjMWFmNWZjNTU4ZWE4YzItMTRh`}
+    accessToken={`ODIyYmIyZmQtZmFhZi00Zjc5LWFjODgtOGY3ZTI0YTMxYmRiNjNmMTEzZWUtYmJl`}
     toPersonEmail={`colm.seale@altocloud.com`}
   />,
   document.getElementById(`main`)
