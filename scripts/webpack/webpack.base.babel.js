@@ -40,10 +40,13 @@ export default (options) => {
       children: false,
       chunks: false,
       modules: false,
+      maxModules: 0,
+      chunkOrigins: false,
       colors: true
     },
     target: `web`,
     resolve: {
+      mainFields: [`src`, `browser`, `module`, `main`],
       modules: [
         `src`,
         path.resolve(__dirname, `..`, `..`, `packages`, `node_modules`),
@@ -60,10 +63,10 @@ export default (options) => {
             path.resolve(__dirname, `..`, `..`, `src`)
           ],
           exclude: [
-            `/fixtures/`,
+            `/__fixtures__/`,
             `/__mocks__/`
           ],
-          loader: `babel-loader`
+          use: [`babel-loader`]
         },
         {
           test: /\.css$/,
@@ -77,7 +80,7 @@ export default (options) => {
               options: {
                 camelCase: true,
                 modules: true,
-                localIdentName: `ciscospark-[local]--[hash:base64:5]`,
+                localIdentName: `[local]--[hash:base64:5]`,
                 importLoaders: 1,
                 sourceMap: true
               }
@@ -85,7 +88,8 @@ export default (options) => {
             {
               loader: `postcss-loader`,
               options: {
-                sourceMap: true
+                sourceMap: true,
+                path: path.resolve(__dirname, `postcss.config.js`)
               }
             }]
           })
@@ -100,31 +104,48 @@ export default (options) => {
           test: /\.woff$/,
           // Inline small woff files and output them below font/.
           // Set mimetype just in case.
-          loader: `file-loader`,
-          options: {
-            name: `fonts/[name].[ext]`,
-            mimetype: `application/font-woff`
-          }
+          use: [{
+            loader: `file-loader`,
+            options: {
+              name: `fonts/[name].[ext]`,
+              mimetype: `application/font-woff`
+            }
+          }]
+        },
+        {
+          test: /\.woff2$/,
+          // Inline small woff files and output them below font/.
+          // Set mimetype just in case.
+          use: [{
+            loader: `file-loader`,
+            options: {
+              name: `fonts/[name].[ext]`,
+              mimetype: `application/font-woff2`
+            }
+          }]
         },
         {
           test: /\.ttf$|\.otf$|\.eot$|\.svg$/,
-          loader: `file-loader`,
-          options: {
-            name: `fonts/[name].[ext]`
-          }
+          use: [{
+            loader: `file-loader`,
+            options: {
+              name: `fonts/[name].[ext]`
+            }
+          }]
         },
         {
           test: /\.mp3$|\.wav$/,
-          loader: `file-loader`,
-          query: {
-            name: `media/[name].[ext]`
-          }
+          use: [{
+            loader: `file-loader`,
+            query: {
+              name: `media/[name].[ext]`
+            }
+          }]
         },
         {
           test: /.*\.(gif|png|jpg)$/,
           use: [
-            `file-loader?name=[name].[ext]`,
-            `image-webpack-loader?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}`
+            `file-loader?name=[name].[ext]`
           ]
         }
       ]

@@ -2,9 +2,9 @@
  * Borrowed from React Bootstrap
  * https://github.com/react-bootstrap/react-bootstrap
  */
-
-import {exec as processExec} from 'child-process-promise';
-import 'colors';
+const processExec = require(`child-process-promise`).exec;
+const processExecSync = require(`child_process`).execSync; // eslint-disable-line no-sync
+require(`colors`);
 
 let executionOptions = {
   dryRun: false,
@@ -32,7 +32,7 @@ function logWithPrefix(prefix, message) {
  * @param {object} options
  * @returns {Promise}
  */
-export function exec(command, options = {}) {
+function exec(command, options = {}) {
   const proc = processExec(command, options);
   if (!executionOptions.verbose) {
     return proc;
@@ -56,7 +56,7 @@ export function exec(command, options = {}) {
  * @param {object} options
  * @returns {Promise}
  */
-export function safeExec(command, options = {}) {
+function safeExec(command, options = {}) {
   const title = options.title || command;
 
   if (executionOptions.dryRun) {
@@ -72,6 +72,17 @@ export function safeExec(command, options = {}) {
  * @param {object} options
  * @returns {undefined}
  */
-export function setExecOptions(options) {
+function setExecOptions(options) {
   executionOptions = {...executionOptions, ...options};
 }
+
+function execSync(command) {
+  return processExecSync(command, {stdio: `inherit`});
+}
+
+module.exports = {
+  exec,
+  safeExec,
+  setExecOptions,
+  execSync
+};
