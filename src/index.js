@@ -1,4 +1,3 @@
-// export {default as AltoSparkVideo} from '@altocloud/alto-spark-video';
 export {default as Button} from '@ciscospark/react-component-button';
 export {
   default as Icon,
@@ -29,3 +28,4 @@ export {default as TypingAvatar} from '@ciscospark/react-component-typing-avatar
 export {default as TypingIndicator} from '@ciscospark/react-component-typing-indicator';
 export {default as WidgetMessageMeet} from '@ciscospark/widget-message-meet';
 export {default as WidgetSpace} from '@ciscospark/widget-space';
+export {default as WidgetAltocloud} from '@ciscospark/widget-altocloud';
