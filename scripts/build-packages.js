@@ -12,11 +12,3 @@ readDir(`packages/node_modules/@ciscospark`)
         throw new Error(error);
       })
   );
-
-readDir(`packages/node_modules/@altocloud`)
-  .then((packages) =>
-    Promise.all(packages.map((pkg) => buildPackage(pkg, null, `@altocloud`)))
-      .catch((error) => {
-        throw new Error(error);
-      })
-  );

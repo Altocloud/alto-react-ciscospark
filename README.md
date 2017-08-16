@@ -1,7 +1,5 @@
 # Altocloud Cisco Spark React _(alto-react-ciscospark)_
 
-> This code base is forked from the [Cisco Spark React Codebase](https://github.com/ciscospark/spark-js-sdk/tree/master/packages/widget-message-meet). We provide our own implementation for _widget-message-meet_ located under packages/@altocloud. The aim is too keep up to date with the latest cisco spark codebase while implementing our own needs on top.
-
 After downloading the repo, you will need to set the upstream repo to get the latest from Cisco:
 ```
 git remote add upstream https://github.com/ciscospark/react-ciscospark.git

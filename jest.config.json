@@ -9,8 +9,7 @@
     "^.+\\.(css|less)$": "identity-obj-proxy",
     "^.+\\.(mp3|wav)$": "<rootDir>/__mocks__/sound-mock.js",
     "^.+\\.(gif|ttf|eot|svg|png|jpg)$": "<rootDir>/__mocks__/file-mock.js",
-    "@ciscospark/(.*)": "<rootDir>/packages/node_modules/@ciscospark/$1/src",
-    "@altocloud/(.*)": "<rootDir>/packages/node_modules/@altocloud/$1/src"
+    "@ciscospark/(.*)": "<rootDir>/packages/node_modules/@ciscospark/$1/src"
   },
   "testRegex": ".test.js$",
   "moduleDirectories": [
